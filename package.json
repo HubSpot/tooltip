@@ -1,9 +1,8 @@
 {
-  "name": "tether",
-  "version": "0.1.3",
-  "description": "",
+  "name": "tooltip",
+  "version": "0.1.0",
+  "description": "CSS tooltips built on Tether",
   "authors": [
-    "Zack Bloom <zbloom@hubspot.com>",
     "Adam Schwartz <adam.flynn.schwartz@gmail.com>"
   ],
   "license": "MIT",
