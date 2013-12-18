@@ -1,0 +1,109 @@
+html, body {
+  height: 100%; }
+
+body {
+  margin: 0;
+  font-family: "proxima-nova", "Helvetica Neue", sans-serif; }
+
+.button {
+  display: inline-block;
+  border: 2px solid #333333;
+  color: #333333;
+  padding: 1em 1.25em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 140px;
+  font-size: 0.8em;
+  line-height: 1.3em; }
+
+.button.dark {
+  background: #333333;
+  color: white; }
+
+.hero-wrap {
+  height: 100%;
+  overflow: hidden; }
+
+table.showcase {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  table.showcase:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
+    height: 0;
+    width: 0;
+    border-width: 18px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: rgba(0, 0, 0, 0.2); }
+  table.showcase.no-next-arrow:after {
+    display: none; }
+  table.showcase .showcase-inner {
+    margin: 40px auto 60px;
+    padding: 10px; }
+    table.showcase .showcase-inner h1 {
+      font-size: 50px;
+      text-align: center;
+      font-weight: 300; }
+      @media (max-width: 567px) {
+        table.showcase .showcase-inner h1 {
+          font-size: 40px; } }
+    table.showcase .showcase-inner h2 {
+      font-size: 24px;
+      text-align: center;
+      font-weight: 300;
+      margin: 1em 0 1em; }
+      @media (max-width: 567px) {
+        table.showcase .showcase-inner h2 {
+          font-size: 14px; } }
+    table.showcase .showcase-inner p {
+      text-align: center; }
+  table.showcase.about {
+    text-align: left;
+    background: #fff1dd; }
+    table.showcase.about a {
+      color: #c96c24; }
+    table.showcase.about p {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: left;
+      width: 500px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto; }
+      table.showcase.about p > code {
+        background: rgba(0, 0, 0, 0.05); }
+    table.showcase.about pre {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      text-align: left;
+      width: 500px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto; }
+  table.showcase.hero {
+    text-align: center; }
+    table.showcase.hero .tooltip-target-demo {
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: middle;
+      *vertical-align: auto;
+      zoom: 1;
+      *display: inline;
+      border: 2px dotted black;
+      margin: 5rem auto;
+      padding: 3rem; }
+      @media (max-width: 567px) {
+        table.showcase.hero .tooltip-target-demo {
+          padding: 1rem; } }
