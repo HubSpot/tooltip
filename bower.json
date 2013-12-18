@@ -1,22 +1,11 @@
 {
-  "name": "tether",
-  "main": [
-    "tether.js",
-    "tether.min.js",
-    "abutment.js",
-    "abutment.min.js",
-    "constraint.js",
-    "constraint.min.js",
-    "shift.js",
-    "shift.min.js"
-  ],
+  "name": "Tooltip",
   "version": "0.1.3",
-  "homepage": "https://github.hubspot.com/tether",
+  "homepage": "https://github.hubspot.com/tooltip",
   "authors": [
-    "Zack Bloom <zbloom@hubspot.com>",
     "Adam Schwartz <adam.flynn.schwartz@gmail.com>"
   ],
-  "description": "Tether elements together",
+  "description": "Tooltips built on Tether",
   "keywords": [
     "javascript"
   ],
@@ -29,6 +18,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "1.9.x"
+    "jquery": "1.9.x",
+    "tether": "0.1.x",
+    "drop": "0.1.x"
   }
 }
