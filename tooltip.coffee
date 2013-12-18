@@ -4,17 +4,11 @@ defaults =
     attach: 'top center'
 
 class Tooltip
-
     constructor: (@options) ->
-        @$target = $ @options.el
+        @options.attach ?= defaults.attach
 
-        @createDrop()
-
-    createDrop: ->
-        @options.attach = defaults.attach if not @options.attach?
-
-        @dropTooltip = new DropTooltip
-            target: @$target[0]
+        @drop = new DropTooltip
+            target: @options.el
             className: 'drop-tooltip-theme-arrows'
             attach: @options.attach
             constrainToWindow: true
