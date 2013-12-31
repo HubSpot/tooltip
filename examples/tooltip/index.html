@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <script type="text/javascript" src="//use.typekit.net/jbn8qxr.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        <link rel="stylesheet" href="../../css/drop.css" />
-        <link rel="stylesheet" href="../../css/drop-tooltip-theme-arrows.css" />
+        <link rel="stylesheet" href="../../css/tooltip-theme-default.css" />
         <style>
             body {
                 font-family: "proxima-nova", "Helvetica Neue", sans-serif;
@@ -29,57 +28,46 @@
         <div class="scroll-parent">
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="top center">Tooltip on Top</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="top center">Tooltip on Top</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="bottom center">Tooltip on Bottom</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="bottom center">Tooltip on Bottom</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="left middle">Tooltip on Left</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="left middle">Tooltip on Left</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="right middle">Tooltip on Right</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="right middle">Tooltip on Right</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="bottom left">Tooltip on Bottom Left</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="bottom left">Tooltip on Bottom Left</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="bottom right">Tooltip on Bottom Right</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="bottom right">Tooltip on Bottom Right</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="top left">Tooltip on Top Left</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="top left">Tooltip on Top Left</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="top right">Tooltip on Top Right</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="top right">Tooltip on Top Right</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="left bottom">Tooltip on Left Bottom</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="left bottom">Tooltip on Left Bottom</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="left top">Tooltip on Left Top</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="left top">Tooltip on Left Top</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="right bottom">Tooltip on Right Bottom</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="right bottom">Tooltip on Right Bottom</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
-            <p><a href="javascript:;" class="drop-tooltip" data-tooltip-content="Whoa, I'm a tooltip" data-attach="right top">Tooltip on Right Top</a></p>
+            <p><a href="javascript:;" class="drop-tooltip" data-tooltip="Whoa, I'm a tooltip" data-tooltip-attach="right top">Tooltip on Right Top</a></p>
             <p>This is a paragraph of text</p>
             <p>This is a paragraph of text</p>
         </div>
 
-        <script src="../resources/js/log.js"></script>
-        <script src="../resources/js/jquery.js"></script>
-        <script src="../../tether.js"></script>
-        <script src="/drop/drop.min.js"></script>
+        <script src="../../deps/tether/tether.min.js"></script>
+        <script src="../../deps/drop/drop.min.js"></script>
         <script src="../../tooltip.js"></script>
-        <script src="../../constraint.js"></script>
-        <script>
-            $('.drop-tooltip').each(function(){
-                new Tooltip({
-                    el: this,
-                    attach: $(this).data('attach')
-                });
-            });
-        </script>
     </body>
 </html>

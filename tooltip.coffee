@@ -1,4 +1,4 @@
-DropTooltip = Drop.createContext()
+_Drop = Drop.createContext()
 
 defaults =
   attach: 'top center'
@@ -8,9 +8,9 @@ class Tooltip
     @options.attach ?= @options.el.getAttribute('data-tooltip-attach') ? defaults.attach
     @options.content ?= @options.el.getAttribute('data-tooltip')
 
-    @drop = new DropTooltip
+    @drop = new _Drop
       target: @options.el
-      className: 'drop-tooltip-theme-arrows'
+      className: 'tooltip-theme-default'
       attach: @options.attach
       constrainToWindow: true
       constrainToScrollParent: false
@@ -26,6 +26,5 @@ Tooltip.init = ->
 
 document.addEventListener 'DOMContentLoaded', ->
   Tooltip.init()
-, false
 
 window.Tooltip = Tooltip

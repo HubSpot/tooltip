@@ -1,8 +1,8 @@
 (function() {
-  var DropTooltip, Tooltip, defaults, initialized, _old, _ref,
+  var Tooltip, defaults, initialized, _Drop,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-  DropTooltip = Drop.createContext();
+  _Drop = Drop.createContext();
 
   defaults = {
     attach: 'top center'
@@ -18,9 +18,9 @@
       if ((_base1 = this.options).content == null) {
         _base1.content = this.options.el.getAttribute('data-tooltip');
       }
-      this.drop = new DropTooltip({
+      this.drop = new _Drop({
         target: this.options.el,
-        className: 'drop-tooltip-theme-arrows',
+        className: 'tooltip-theme-default',
         attach: this.options.attach,
         constrainToWindow: true,
         constrainToScrollParent: false,
@@ -52,19 +52,9 @@
     return _results;
   };
 
-  if ((((_ref = document.documentElement) != null ? _ref.doScroll : void 0) != null) && (document.createEventObject != null)) {
-    _old = document.onreadystatechange;
-    document.onreadystatechange = function() {
-      if (document.readyState === 'complete') {
-        Tooltip.init();
-      }
-      return _old != null ? _old.apply(this, arguments) : void 0;
-    };
-  } else {
-    document.addEventListener('DOMContentLoaded', function() {
-      return Tooltip.init();
-    }, false);
-  }
+  document.addEventListener('DOMContentLoaded', function() {
+    return Tooltip.init();
+  });
 
   window.Tooltip = Tooltip;
 
