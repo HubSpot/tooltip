@@ -24,17 +24,8 @@ Tooltip.init = ->
 
     initialized.push el
 
-if document.documentElement?.doScroll? and document.createEventObject?
-  # IE < 9
-  _old = document.onreadystatechange
-  document.onreadystatechange = ->
-    if document.readyState is 'complete'
-      Tooltip.init()
-
-    _old?.apply this, arguments
-else
-  document.addEventListener 'DOMContentLoaded', ->
-    Tooltip.init()
-  , false
+document.addEventListener 'DOMContentLoaded', ->
+  Tooltip.init()
+, false
 
 window.Tooltip = Tooltip
