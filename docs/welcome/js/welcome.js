@@ -28,7 +28,7 @@
           return word.substr(0, 1).toUpperCase() + word.substr(1);
         }).join(' ')
       });
-      drops[position].$drop.addClass("drop-attached-" + (position.replace(' ', '-')));
+      $(drops[position].drop).addClass("drop-attached-" + (position.replace(' ', '-')));
     }
     openIndex = 0;
     frames = 0;
