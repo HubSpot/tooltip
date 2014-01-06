@@ -1,25 +1,30 @@
-DropTooltip = Drop.createContext()
+_Drop = Drop.createContext()
 
 defaults =
-    attach: 'top center'
+  attach: 'top center'
 
 class Tooltip
+  constructor: (@options) ->
+    @options.attach ?= @options.el.getAttribute('data-tooltip-attach') ? defaults.attach
+    @options.content ?= @options.el.getAttribute('data-tooltip')
 
-    constructor: (@options) ->
-        @$target = $ @options.el
+    @drop = new _Drop
+      target: @options.el
+      className: 'tooltip-theme-default'
+      attach: @options.attach
+      constrainToWindow: true
+      constrainToScrollParent: false
+      openOn: 'hover'
+      content: @options.content
 
-        @createDrop()
+initialized = []
+Tooltip.init = ->
+  for el in document.querySelectorAll('[data-tooltip]') when el not in initialized
+    new Tooltip {el}
 
-    createDrop: ->
-        @options.attach = defaults.attach if not @options.attach?
+    initialized.push el
 
-        @dropTooltip = new DropTooltip
-            target: @$target[0]
-            className: 'drop-tooltip-theme-arrows'
-            attach: @options.attach
-            constrainToWindow: true
-            constrainToScrollParent: false
-            openOn: 'hover'
-            content: @options.content ? @$target.attr('data-tooltip-content')
+document.addEventListener 'DOMContentLoaded', ->
+  Tooltip.init()
 
 window.Tooltip = Tooltip
