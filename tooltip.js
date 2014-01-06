@@ -20,7 +20,7 @@
       }
       this.drop = new _Drop({
         target: this.options.el,
-        className: 'tooltip-theme-default',
+        className: 'tooltip tooltip-theme-arrows',
         attach: this.options.attach,
         constrainToWindow: true,
         constrainToScrollParent: false,

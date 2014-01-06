@@ -1,0 +1,23 @@
+@import pointer-events
+
+// The majority of the tooltip styles come from a drop helper
+
+@import ../deps/drop/sass/helpers/drop
+@import ../deps/drop/sass/helpers/drop-theme-arrows
+
+$themePrefix: "tooltip"
+$arrowSize: 16px
+$backgroundColor: #000
+$color: #eee
+$useDropShadow: false
+
++drop($themePrefix: $themePrefix)
++drop-theme-arrows($themePrefix: $themePrefix, $arrowSize: $arrowSize, $backgroundColor: $backgroundColor, $color: $color, $useDropShadow: $useDropShadow)
+
+// Just a few additions
+
+.#{ $themePrefix }.#{ $themePrefix }-theme-arrows
+    +pointer-events(none)
+
+    .#{ $themePrefix }-content
+        padding: .5em 1em

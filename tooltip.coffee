@@ -10,7 +10,7 @@ class Tooltip
 
     @drop = new _Drop
       target: @options.el
-      className: 'tooltip-theme-default'
+      className: 'tooltip tooltip-theme-arrows'
       attach: @options.attach
       constrainToWindow: true
       constrainToScrollParent: false
