@@ -19,6 +19,10 @@
     "tests"
   ],
   "dependencies": {
-    "tether": ">= 0.2.8"
+    "drop": "~0.3.0",
+    "tether": "~0.3.2"
+  },
+  "resolutions": {
+    "tether": "~0.3.2"
   }
 }
