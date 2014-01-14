@@ -1,28 +1,48 @@
-<link rel="stylesheet" href="/tooltip/css/tooltip-theme-default.css" />
-<script src="/tooltip/deps/tether/tether.min.js"></script>
-<script src="/tooltip/deps/drop/drop.min.js"></script>
+<link rel="stylesheet" href="/tooltip/css/tooltip-theme-arrows.css" />
 <script src="/tooltip/tooltip.min.js"></script>
 
 ## Tooltip
 
 Tooltip is a javascript and CSS library for creating styleable tooltip elements.
 
-Tooltip uses [Tether](http://github.hubspot.com/tether) to create and position itself.
+Tooltip uses [Tether](http://github.hubspot.com/tether) for reliable and efficient positioning.
 
 ### Dependencies
 
-- Tether – [GitHub](https://github.com/HubSpot/tether), [Download](https://github.com/HubSpot/tether/releases)
+None!
+
+### Browser Support
+
+IE9+ and everything modern
 
 ### Usage
 
-#### Initialization
+- Include the js and theme:
 
-To initialize, simply create a `new Tooltip` object.
+```html
+<link rel="stylesheet" href="css/tooltip-theme-arrows.css" />
+<script src="tooltip.min.js"></script>
+```
+
+- Add `data-tooltip`, and optionally `data-tooltip-position` to any element.
+
+```html
+<a href=# data-tooltip="Weeeeee" data-tooltip-position="top middle">I'm a link!</a>
+```
+
+#### Manual Initialization
+
+To manually create a tooltip, create a `new Tooltip` object:
 
 ```coffeescript
 new Tooltip
-    el: targetElement
+  target: targetElement
+  position: 'top left'
+  content: "My awesome <b>content</b>."
+  classes: 'my-tether-theme'
 ```
+
+You can also pass a DOM node as `content`.
 
 #### Changing the positioning
 

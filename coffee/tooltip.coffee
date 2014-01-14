@@ -1,29 +1,36 @@
-{addClass, removeClass} = Tether.Utils
+{addClass, removeClass, extend} = Tether.Utils
 
 _Drop = Drop.createContext
   classPrefix: 'tooltip'
 
 defaults =
   position: 'top center'
+  openOn: 'hover'
+  classes: 'tooltip-theme-arrows'
+  constrainToWindow: true
 
 class Tooltip
   constructor: (@options) ->
-    @options.position ?= @options.el.getAttribute('data-tooltip-position') ? defaults.position
-    @options.content ?= @options.el.getAttribute('data-tooltip')
-    console.log @options
+    if not @options.target
+      throw new Error "Tooltip Error: You must provide a target for Tooltip to attach to"
 
-    new _Drop
-      target: @options.el
-      content: @options.content
-      classes: 'tooltip-theme-arrows'
-      position: @options.position
-      constrainToWindow: true
-      openOn: 'hover'
+    @options.position ?= @options.target.getAttribute('data-tooltip-position')
+    @options.content ?= @options.target.getAttribute('data-tooltip')
+
+    @options = extend {}, defaults, @options
+
+    @drop = new _Drop @options
+
+  close: ->
+    @drop.close()
+
+  open: ->
+    @drop.open()
 
 initialized = []
 Tooltip.init = ->
   for el in document.querySelectorAll('[data-tooltip]') when el not in initialized
-    new Tooltip {el}
+    new Tooltip {target: el}
 
     initialized.push el
 

@@ -4,7 +4,7 @@ module.exports = (grunt) ->
     bower:
       install:
         options:
-          targetDir: 'deps'
+          targetDir: 'bower_components'
           cleanup: true
           layout: 'byComponent'
           bowerOptions:

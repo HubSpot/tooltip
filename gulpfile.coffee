@@ -5,23 +5,22 @@ concat = require('gulp-concat')
 uglify = require('gulp-uglify')
 header = require('gulp-header')
 rename = require('gulp-rename')
-grunt = require('gulp-grunt')(gulp)
-_ = require('underscore')
 {exec} = require('child_process')
 
 pkg = require('./package.json')
 banner = "/*! #{ pkg.name } #{ pkg.version } */\n"
-
-gulp.task 'bower', ->
-  gulp.run('grunt-bower')
 
 gulp.task 'coffee', ->
   gulp.src('coffee/*')
     .pipe(coffee())
     .pipe(gulp.dest('./js/'))
 
+  gulp.src('docs/welcome/coffee/*')
+    .pipe(coffee())
+    .pipe(gulp.dest('./docs/welcome/js/'))
+
 gulp.task 'concat', ->
-  gulp.src(['./deps/tether/tether.js', './deps/drop/drop.js', './js/tooltip.js'])
+  gulp.src(['./bower_components/tether/tether.js', './bower_components/drop/drop.js', './js/tooltip.js'])
     .pipe(concat('tooltip.js'))
     .pipe(header(banner))
     .pipe(gulp.dest('./'))
@@ -47,8 +46,7 @@ gulp.task 'compass', ->
       .pipe(gulp.dest("./#{ path }css"))
 
 gulp.task 'default', ->
-  gulp.run 'bower', _.once ->
-    gulp.run 'compass', 'js'
+  gulp.run 'compass', 'js'
 
   gulp.watch './coffee/*', ->
     gulp.run 'js'
