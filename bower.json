@@ -1,6 +1,6 @@
 {
   "name": "Tooltip",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "homepage": "https://github.hubspot.com/tooltip",
   "authors": [
     "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "tether": ">= 0.2.8"
+    "drop": "~0.3.3",
+    "tether": "~0.3.5"
   }
 }
