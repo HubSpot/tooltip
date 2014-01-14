@@ -32,13 +32,14 @@ setupHero = ->
     window.drops = {}
 
     for position in positions
-        drops[position] = new Drop
+        drops[position] = new Tooltip
             target: $target[0]
             className: 'tooltip-theme-default'
             attach: position
             constrainToScrollParent: false
             constrainToWindow: false
             openOn: ''
+            element: $('<div/>')
             content: $.map(position.split(' '), (word) -> word.substr(0, 1).toUpperCase() + word.substr(1)).join(' ')
 
         # TODO - remove once zackbloom fixes
