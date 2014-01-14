@@ -9,12 +9,12 @@ class Tooltip
     @options.content ?= @options.el.getAttribute('data-tooltip')
 
     @tip = document.createElement 'div'
-    addClass @tip, 'tooltip-theme-arrows tooltip'
+    addClass @tip, 'tooltip-theme-arrows'
 
     content = document.createElement 'div'
     addClass content, 'tooltip-content'
     @tip.appendChild content
-    
+
     if typeof @options.content is 'string'
       content.innerHTML = @options.content
     else

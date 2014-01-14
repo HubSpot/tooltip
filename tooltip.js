@@ -20,7 +20,7 @@
         _base1.content = this.options.el.getAttribute('data-tooltip');
       }
       this.tip = document.createElement('div');
-      addClass(this.tip, 'tooltip-theme-arrows tooltip');
+      addClass(this.tip, 'tooltip-theme-arrows');
       content = document.createElement('div');
       addClass(content, 'tooltip-content');
       this.tip.appendChild(content);
