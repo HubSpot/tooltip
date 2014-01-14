@@ -15,7 +15,7 @@ class Tooltip
     new _Drop
       target: @options.el
       content: @options.content
-      classes: 'tooltip-theme-arrows tooltip'
+      classes: 'tooltip-theme-arrows'
       position: @options.position
       constrainToWindow: true
       openOn: 'hover'

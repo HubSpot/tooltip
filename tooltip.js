@@ -1364,10 +1364,11 @@
       if ((_base1 = this.options).content == null) {
         _base1.content = this.options.el.getAttribute('data-tooltip');
       }
+      console.log(this.options);
       new _Drop({
         target: this.options.el,
         content: this.options.content,
-        classes: 'tooltip-theme-arrows tooltip',
+        classes: 'tooltip-theme-arrows',
         position: this.options.position,
         constrainToWindow: true,
         openOn: 'hover'

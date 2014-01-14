@@ -26,7 +26,7 @@
       new _Drop({
         target: this.options.el,
         content: this.options.content,
-        classes: 'tooltip-theme-arrows tooltip',
+        classes: 'tooltip-theme-arrows',
         position: this.options.position,
         constrainToWindow: true,
         openOn: 'hover'

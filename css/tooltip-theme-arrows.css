@@ -111,11 +111,11 @@
       right: 100%;
       border-right-color: black; }
 
-.tooltip.tooltip-theme-arrows {
+.tooltip-element.tooltip-theme-arrows {
   -webkit-pointer-events: none;
   -moz-pointer-events: none;
   pointer-events: none; }
-  .tooltip.tooltip-theme-arrows .tooltip-content {
+  .tooltip-element.tooltip-theme-arrows .tooltip-content {
     padding: 0.5em 1em; }
 
 .tooltip-element {
