@@ -117,6 +117,3 @@
   pointer-events: none; }
   .tooltip-element.tooltip-theme-arrows .tooltip-content {
     padding: 0.5em 1em; }
-
-.tooltip-element {
-  display: none; }
