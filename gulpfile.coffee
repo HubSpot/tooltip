@@ -5,7 +5,6 @@ concat = require('gulp-concat')
 uglify = require('gulp-uglify')
 header = require('gulp-header')
 rename = require('gulp-rename')
-{exec} = require('child_process')
 
 pkg = require('./package.json')
 banner = "/*! #{ pkg.name } #{ pkg.version } */\n"

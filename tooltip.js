@@ -1,4 +1,4 @@
-/*! tether-tooltip 0.2.0 */
+/*! tether-tooltip 0.2.1 */
 /*! tether 0.3.4 */
 (function() {
   var Evented, addClass, extend, getBounds, getOffsetParent, getScrollParent, hasClass, removeClass,
