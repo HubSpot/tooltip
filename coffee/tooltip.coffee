@@ -8,6 +8,7 @@ defaults =
   openOn: 'hover'
   classes: 'tooltip-theme-arrows'
   constrainToWindow: true
+  constrainToScrollParent: false
 
 class Tooltip
   constructor: (@options) ->

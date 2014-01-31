@@ -12,7 +12,8 @@
     position: 'top center',
     openOn: 'hover',
     classes: 'tooltip-theme-arrows',
-    constrainToWindow: true
+    constrainToWindow: true,
+    constrainToScrollParent: false
   };
 
   Tooltip = (function() {
