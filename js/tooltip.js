@@ -1,6 +1,10 @@
 (function() {
-  var Tooltip, addClass, defaults, extend, initialized, removeClass, _Drop, _ref,
+  var Drop, Tether, Tooltip, addClass, defaults, extend, initialized, removeClass, _Drop, _ref,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+
+  Tether = this.Tether;
+
+  Drop = this.Drop;
 
   _ref = Tether.Utils, addClass = _ref.addClass, removeClass = _ref.removeClass, extend = _ref.extend;
 
@@ -70,6 +74,6 @@
     }
   });
 
-  window.Tooltip = Tooltip;
+  this.Tooltip = Tooltip;
 
 }).call(this);

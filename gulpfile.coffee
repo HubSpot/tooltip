@@ -5,6 +5,7 @@ concat = require('gulp-concat')
 uglify = require('gulp-uglify')
 header = require('gulp-header')
 rename = require('gulp-rename')
+wrap = require('gulp-wrap-umd')
 
 pkg = require('./package.json')
 banner = "/*! #{ pkg.name } #{ pkg.version } */\n"
@@ -21,6 +22,10 @@ gulp.task 'coffee', ->
 gulp.task 'concat', ->
   gulp.src(['./bower_components/tether/tether.js', './bower_components/drop/drop.js', './js/tooltip.js'])
     .pipe(concat('tooltip.js'))
+    .pipe(wrap(
+      namespace: 'Tooltip'
+      exports: 'Tooltip'
+    ))
     .pipe(header(banner))
     .pipe(gulp.dest('./'))
 

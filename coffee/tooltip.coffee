@@ -1,3 +1,6 @@
+Tether = this.Tether
+Drop = this.Drop
+
 {addClass, removeClass, extend} = Tether.Utils
 
 _Drop = Drop.createContext
@@ -39,4 +42,4 @@ document.addEventListener 'DOMContentLoaded', ->
   if Tooltip.autoinit isnt false
     Tooltip.init()
 
-window.Tooltip = Tooltip
+this.Tooltip = Tooltip
