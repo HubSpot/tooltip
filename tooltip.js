@@ -1,4 +1,4 @@
-/*! tether-tooltip 0.2.3 */
+/*! tether-tooltip 0.2.4 */
 /*! tether 0.6.1 */
 
 

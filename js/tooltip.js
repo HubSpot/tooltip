@@ -33,13 +33,17 @@
       this.drop = new _Drop(this.options);
     }
 
-    Tooltip.prototype.close = function() {
-      return this.drop.close();
-    };
+    Tooltip.prototype.close = Tooltip.drop.close.bind(Tooltip.drop);
 
-    Tooltip.prototype.open = function() {
-      return this.drop.open();
-    };
+    Tooltip.prototype.open = Tooltip.drop.open.bind(Tooltip.drop);
+
+    Tooltip.prototype.toggle = Tooltip.drop.toggle.bind(Tooltip.drop);
+
+    Tooltip.prototype.remove = Tooltip.drop.remove.bind(Tooltip.drop);
+
+    Tooltip.prototype.destory = Tooltip.drop.destroy.bind(Tooltip.drop);
+
+    Tooltip.prototype.position = Tooltip.drop.position.bind(Tooltip.drop);
 
     return Tooltip;
 
