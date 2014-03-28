@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>tooltip</title><link rel="icon" href="http://static.hubspot.com/favicon.ico"><link rel="stylesheet" href="https://static2cdn.hubspot.com/hubspot_public_assets/static-1.112/shared/sass/hubspot_public_assets.css"><link rel="stylesheet" href="https://static.hubspot.com/bundles/navigation.css"><link rel="stylesheet" href="/static-resources/css/print.css"><link rel="stylesheet" href="/static-resources/css/highlight-theme-github.css"><link rel="stylesheet" href="/static-resources/css/navigation-tweaks.css"><link rel="stylesheet" href="/static-resources/css/documentation.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link rel="stylesheet" href="/tooltip//resources/executr/lib/CodeMirror/codemirror.css"><link rel="stylesheet" href="/tooltip//resources/executr/build/css/executr.css"><script src="/tooltip//resources/executr/lib/CodeMirror/codemirror.js"></script><script src="/tooltip//resources/executr/lib/CodeMirror/mode/coffeescript/coffeescript.js"></script><script src="/tooltip//resources/executr/lib/CodeMirror/mode/javascript/javascript.js"></script><script src="/tooltip//resources/executr/lib/coffee-script.js"></script><script src="/tooltip//resources/executr/lib/underscore.min.js"></script><script src="/tooltip//resources/executr/lib/js2coffee.min.js"></script><script src="/tooltip//resources/executr/build/js/executr.js"></script><script src="/tooltip//resources/executr/build/js/executr-run.js"></script><script src="//use.typekit.net/jbn8qxr.js"></script><script>try{Typekit.load();}catch(e){}
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>tooltip</title><link rel="icon" href="http://static.hubspot.com/favicon.ico"><link rel="stylesheet" href="https://static2cdn.hubspot.com/hubspot_public_assets/static-1.112/shared/sass/hubspot_public_assets.css"><link rel="stylesheet" href="https://static.hubspot.com/bundles/navigation.css"><link rel="stylesheet" href="//github.hubspot.com/static-resources/css/print.css"><link rel="stylesheet" href="//github.hubspot.com/static-resources/css/highlight-theme-github.css"><link rel="stylesheet" href="//github.hubspot.com/static-resources/css/navigation-tweaks.css"><link rel="stylesheet" href="//github.hubspot.com/static-resources/css/documentation.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><link rel="stylesheet" href="//github.hubspot.com/tooltip//resources/executr/lib/CodeMirror/codemirror.css"><link rel="stylesheet" href="//github.hubspot.com/tooltip//resources/executr/build/css/executr.css"><script src="//github.hubspot.com/tooltip//resources/executr/lib/CodeMirror/codemirror.js"></script><script src="//github.hubspot.com/tooltip//resources/executr/lib/CodeMirror/mode/coffeescript/coffeescript.js"></script><script src="//github.hubspot.com/tooltip//resources/executr/lib/CodeMirror/mode/javascript/javascript.js"></script><script src="//github.hubspot.com/tooltip//resources/executr/lib/coffee-script.js"></script><script src="//github.hubspot.com/tooltip//resources/executr/lib/underscore.min.js"></script><script src="//github.hubspot.com/tooltip//resources/executr/lib/js2coffee.min.js"></script><script src="//github.hubspot.com/tooltip//resources/executr/build/js/executr.js"></script><script src="//github.hubspot.com/tooltip//resources/executr/build/js/executr-run.js"></script><script src="//use.typekit.net/ghy0wve.js"></script><script>try{Typekit.load();}catch(e){}
 </script></head><body><div id="hs-nav-v3" class="nav-width-flex signed-out-nav">
     <div class="hs-nav-section main-nav">
         <div class="nav-section-inner">
@@ -22,31 +22,40 @@
             </ul>
             <ul class="nav-links-right">
                 <li class="first">
-                    <a href="http://dev.hubspot.com/jobs/" class="sign-in">You should work at HubSpot</a>
+                    <a href="http://dev.hubspot.com/jobs/" class="sign-in">We're Hiring Engineers</a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
-<div class="hs-page-width-normal"><div class="row-fluid"><div class="span6"><h1 class="hs-doc-page-header"><a class="hs-doc-homepage-link" href="../">tooltip</a></h1></div><div class="span6 hidden-phone"><div class="hs-doc-slim-github-link-wrapper"><a class="hs-doc-slim-github-link" href="http://github.com/HubSpot/tooltip">On GitHub</a></div></div></div></div><div class="hs-page-width-normal"><div class="row-fluid"><div class="span3"><div class="hs-doc-sidenav"><nav><ul class="hs-public-sidenav"><li class=""><a href="../">Home</a></li><li><b>Annotated source</b></li><li><a target="_blank" href="../source/tooltip.html">tooltip.coffee</a></li></ul></nav></div></div><div class="span9"><div class="hs-doc-content"><p><link rel="stylesheet" href="/tooltip/css/tooltip-theme-default.css" /></p>
-<script src="/tooltip/deps/tether/tether.min.js"></script>
-<script src="/tooltip/deps/drop/drop.min.js"></script>
+<div class="hs-page-width-normal"><div class="row-fluid"><div class="span6"><h1 class="hs-doc-page-header"><a class="hs-doc-homepage-link" href="../">tooltip</a></h1></div><div class="span6 hidden-phone"><div class="hs-doc-slim-github-link-wrapper"><a class="hs-doc-slim-github-link" href="http://github.com/HubSpot/tooltip">★ On GitHub</a></div></div></div></div><div class="hs-page-width-normal"><div class="row-fluid"><div class="span3"><div class="hs-doc-sidenav"><nav><ul class="hs-public-sidenav"><li class=""><a href="../">Home</a></li></ul></nav></div></div><div class="span9"><div class="hs-doc-content"><p><link rel="stylesheet" href="/tooltip/css/tooltip-theme-arrows.css" /></p>
 <script src="/tooltip/tooltip.min.js"></script>
 
 <h2 id="tooltip">Tooltip</h2>
 <p>Tooltip is a javascript and CSS library for creating styleable tooltip elements.</p>
-<p>Tooltip uses <a href="http://github.hubspot.com/tether">Tether</a> and <a href="http://github.hubspot.com/drop">Drop</a> to create and position itself.</p>
+<p>Tooltip uses <a href="http://github.hubspot.com/tether">Tether</a> for reliable and efficient positioning.</p>
 <h3 id="dependencies">Dependencies</h3>
-<ul>
-<li>jQuery</li>
-<li>Tether – <a href="https://github.com/HubSpot/tether">GitHub</a>, <a href="https://github.com/HubSpot/tether/releases">Download</a></li>
-<li>Drop – <a href="https://github.com/HubSpot/drop">GitHub</a>, <a href="https://github.com/HubSpot/drop/releases">Download</a></li>
-</ul>
+<p>None!</p>
+<h3 id="browser-support">Browser Support</h3>
+<p>IE9+ and everything modern</p>
 <h3 id="usage">Usage</h3>
-<h4 id="initialization">Initialization</h4>
-<p>To initialize, simply create a <code>new Tooltip</code> object.</p>
+<ul>
+<li>Include the js and theme:</li>
+</ul>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"css/tooltip-theme-arrows.css"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"tooltip.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></pre>
+<ul>
+<li>Add <code>data-tooltip</code>, and optionally <code>data-tooltip-position</code> to any element.</li>
+</ul>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">#</span> <span class="attribute">data-tooltip</span>=<span class="value">"Weeeeee"</span> <span class="attribute">data-tooltip-position</span>=<span class="value">"top middle"</span>&gt;</span>I'm a link!<span class="tag">&lt;/<span class="title">a</span>&gt;</span></code></pre>
+<h4 id="manual-initialization">Manual Initialization</h4>
+<p>To manually create a tooltip, create a <code>new Tooltip</code> object:</p>
 <pre><code class="lang-coffeescript"><span class="keyword">new</span> Tooltip
-    el: targetElement</code></pre>
+  target: targetElement
+  position: <span class="string">'top left'</span>
+  content: <span class="string">"My awesome &lt;b&gt;content&lt;/b&gt;."</span>
+  classes: <span class="string">'my-tether-theme'</span></code></pre>
+<p>You can also pass a DOM node as <code>content</code>.</p>
 <h4 id="changing-the-positioning">Changing the positioning</h4>
 <p>Tooltips can be attached to 12 locations around the target. When initializing, you may set the <code>attach</code> property to any of the following:</p>
 <pre><code class="lang-coffeescript"><span class="string">'top left'</span>
@@ -80,7 +89,7 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-45159009-1', 'hubspot.com');
+  ga('create', 'UA-45159009-1', 'auto');
   ga('send', 'pageview');
 </script>
 </body></html>

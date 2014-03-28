@@ -1,0 +1,36 @@
+{
+  "name": "drop",
+  "version": "0.5.4",
+  "homepage": "https://github.com/HubSpot/drop",
+  "authors": [
+    "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
+    "Zack Bloom <zackbloom@gmail.com>"
+  ],
+  "description": "Client-side library for creating dropdowns",
+  "keywords": [
+    "dropdown",
+    "overlay",
+    "tether"
+  ],
+  "license": "MIT",
+  "main": "drop.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tether": "~0.6.5"
+  },
+  "_release": "0.5.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.4",
+    "commit": "d4cbbdb38ee968e2c6fc88880f11479a264df5fb"
+  },
+  "_source": "git://github.com/HubSpot/drop.git",
+  "_target": "0.5.4",
+  "_originalSource": "drop"
+}

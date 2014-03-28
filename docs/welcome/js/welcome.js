@@ -17,18 +17,15 @@
     window.drops = {};
     for (_i = 0, _len = positions.length; _i < _len; _i++) {
       position = positions[_i];
-      drops[position] = new Drop({
+      drops[position] = new Tooltip({
         target: $target[0],
-        className: 'tooltip-theme-default',
-        attach: position,
-        constrainToScrollParent: false,
-        constrainToWindow: false,
+        position: position,
         openOn: '',
         content: $.map(position.split(' '), function(word) {
           return word.substr(0, 1).toUpperCase() + word.substr(1);
-        }).join(' ')
+        }).join(' '),
+        constrainToWindow: false
       });
-      $(drops[position].drop).addClass("drop-attached-" + (position.replace(' ', '-')));
     }
     openIndex = 0;
     frames = 0;
