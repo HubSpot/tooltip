@@ -33,17 +33,29 @@
       this.drop = new _Drop(this.options);
     }
 
-    Tooltip.prototype.close = Tooltip.drop.close.bind(Tooltip.drop);
+    Tooltip.prototype.close = function() {
+      return this.drop.close();
+    };
 
-    Tooltip.prototype.open = Tooltip.drop.open.bind(Tooltip.drop);
+    Tooltip.prototype.open = function() {
+      return this.drop.open();
+    };
 
-    Tooltip.prototype.toggle = Tooltip.drop.toggle.bind(Tooltip.drop);
+    Tooltip.prototype.toggle = function() {
+      return this.drop.toggle();
+    };
 
-    Tooltip.prototype.remove = Tooltip.drop.remove.bind(Tooltip.drop);
+    Tooltip.prototype.remove = function() {
+      return this.drop.remove();
+    };
 
-    Tooltip.prototype.destory = Tooltip.drop.destroy.bind(Tooltip.drop);
+    Tooltip.prototype.destory = function() {
+      return this.drop.destroy();
+    };
 
-    Tooltip.prototype.position = Tooltip.drop.position.bind(Tooltip.drop);
+    Tooltip.prototype.position = function() {
+      return this.drop.position();
+    };
 
     return Tooltip;
 

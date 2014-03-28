@@ -22,12 +22,23 @@ class Tooltip
 
     @drop = new _Drop @options
 
-  close: @drop.close.bind(@drop)
-  open: @drop.open.bind(@drop)
-  toggle: @drop.toggle.bind(@drop)
-  remove: @drop.remove.bind(@drop)
-  destory: @drop.destroy.bind(@drop)
-  position: @drop.position.bind(@drop)
+  close: ->
+    @drop.close()
+
+  open: ->
+    @drop.open()
+
+  toggle: ->
+    @drop.toggle()
+
+  remove: ->
+    @drop.remove()
+
+  destory: ->
+    @drop.destroy()
+
+  position: ->
+    @drop.position()
 
 initialized = []
 Tooltip.init = ->
