@@ -34,7 +34,7 @@ class Tooltip
   remove: ->
     @drop.remove()
 
-  destory: ->
+  destroy: ->
     @drop.destroy()
 
   position: ->
