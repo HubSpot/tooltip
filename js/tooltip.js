@@ -18,16 +18,23 @@
 
   Tooltip = (function() {
     function Tooltip(options) {
-      var _base, _base1;
+      var content, position, _base, _base1;
       this.options = options;
       if (!this.options.target) {
         throw new Error("Tooltip Error: You must provide a target for Tooltip to attach to");
       }
-      if ((_base = this.options).position == null) {
-        _base.position = this.options.target.getAttribute('data-tooltip-position');
+      if (position = this.options.target.getAttribute('data-tooltip-position')) {
+        if ((_base = this.options).position == null) {
+          _base.position = position;
+        }
       }
-      if ((_base1 = this.options).content == null) {
-        _base1.content = this.options.target.getAttribute('data-tooltip');
+      if (content = this.options.target.getAttribute('data-tooltip')) {
+        if ((_base1 = this.options).content == null) {
+          _base1.content = content;
+        }
+      }
+      if (!this.options.content) {
+        throw new Error("Tooltip Error: You must provide content for Tooltip to display");
       }
       this.options = extend({}, defaults, this.options);
       this.drop = new _Drop(this.options);
