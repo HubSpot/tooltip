@@ -15,8 +15,14 @@ class Tooltip
     if not @options.target
       throw new Error "Tooltip Error: You must provide a target for Tooltip to attach to"
 
-    @options.position ?= @options.target.getAttribute('data-tooltip-position')
-    @options.content ?= @options.target.getAttribute('data-tooltip')
+    if position = @options.target.getAttribute('data-tooltip-position')
+      @options.position ?= position
+
+    if content = @options.target.getAttribute('data-tooltip')
+      @options.content ?= content
+
+    if not @options.content
+      throw new Error "Tooltip Error: You must provide content for Tooltip to display"
 
     @options = extend {}, defaults, @options
 
