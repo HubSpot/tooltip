@@ -49,7 +49,7 @@
       return this.drop.remove();
     };
 
-    Tooltip.prototype.destory = function() {
+    Tooltip.prototype.destroy = function() {
       return this.drop.destroy();
     };
 
