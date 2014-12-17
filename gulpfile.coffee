@@ -49,7 +49,7 @@ gulp.task 'compass', ->
       .pipe(gulp.dest("./#{ path }css"))
 
 gulp.task 'default', ->
-  gul.run 'bower', ->
+  gulp.run 'bower', ->
     gulp.run 'js', 'compass'
 
   gulp.watch './coffee/*', ->
