@@ -1,59 +1,82 @@
-gulp = require('gulp')
-coffee = require('gulp-coffee')
-compass = require('gulp-compass')
-concat = require('gulp-concat')
-uglify = require('gulp-uglify')
-header = require('gulp-header')
-rename = require('gulp-rename')
-bower = require('gulp-bower')
+var del     = require('del');
+var gulp    = require('gulp');
+var babel   = require('gulp-babel');
+var sass    = require('gulp-ruby-sass');
+var header  = require('gulp-header');
+var rename  = require('gulp-rename');
+var uglify  = require('gulp-uglify');
+var umd     = require('gulp-wrap-umd');
 
-pkg = require('./package.json')
-banner = "/*! #{ pkg.name } #{ pkg.version } */\n"
 
-gulp.task 'bower', ->
-  bower().pipe(gulp.dest('./bower_components'))
+// Variables
+var distDir = './dist';
+var pkg = require('./package.json');
+var banner = ['/*!', pkg.name, pkg.version, '*/\n'].join(' ');
+var umdOptions = {
+  exports: 'Tooltip',
+  namespace: 'Tooltip',
+  deps: [{
+    name: 'Drop',
+    globalName: 'Drop',
+    paramName: 'Drop',
+    amdName: 'drop',
+    cjsName: 'drop'
+  },
+  {
+    name: 'Tether',
+    globalName: 'Tether',
+    paramName: 'Tether',
+    amdName: 'tether',
+    cjsName: 'tether'
+  }]
+};
 
-gulp.task 'coffee', ->
-  gulp.src('coffee/*')
-    .pipe(coffee())
-    .pipe(gulp.dest('./js/'))
 
-  gulp.src('docs/welcome/coffee/*')
-    .pipe(coffee())
-    .pipe(gulp.dest('./docs/welcome/js/'))
+// Clean
+gulp.task('clean', function() {
+  del.sync([distDir]);
+});
 
-gulp.task 'concat', ->
-  gulp.src(['./bower_components/tether/tether.js', './bower_components/drop/js/drop.js', './js/tooltip.js'])
-    .pipe(concat('tooltip.js'))
+
+// Javascript
+gulp.task('js', ['clean'], function() {
+  gulp.src('./src/js/**/*.js')
+    .pipe(babel())
+    .pipe(umd(umdOptions))
     .pipe(header(banner))
-    .pipe(gulp.dest('./'))
 
-gulp.task 'uglify', ->
-  gulp.src('./tooltip.js')
+    // Original
+    .pipe(gulp.dest(distDir + '/js'))
+
+    // Minified
     .pipe(uglify())
-    .pipe(header(banner))
-    .pipe(rename('tooltip.min.js'))
-    .pipe(gulp.dest('./'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest(distDir + '/js'));
+});
 
-gulp.task 'js', ->
-  gulp.run 'coffee', 'concat', 'uglify'
 
-gulp.task 'compass', ->
-  for path in ['', 'docs/welcome/']
-    gulp.src("./#{ path }sass/*")
-      .pipe(compass(
-        sass: "#{ path }sass"
-        css: "#{ path }css"
-        comments: false
-      ))
-      .pipe(gulp.dest("./#{ path }css"))
+// CSS
+gulp.task('css', function() {
+  sass('./src/css', {
+    loadPath: './bower_components',
+    compass: true
+  })
+  .pipe(gulp.dest(distDir + '/css'));
+});
 
-gulp.task 'default', ->
-  gulp.run 'bower', ->
-    gulp.run 'js', 'compass'
 
-  gulp.watch './coffee/*', ->
-    gulp.run 'js'
+// Documentation
+// TODO: Redo documentation
 
-  gulp.watch './**/*.sass', ->
-    gulp.run 'compass'
+
+// Watch
+gulp.task('watch', ['js', 'css'], function() {
+  gulp.watch('./src/js/**/*', ['js']);
+  gulp.watch('./src/css/**/*', ['css']);
+});
+
+
+// Defaults
+gulp.task('build', ['js', 'css'])
+gulp.task('default', ['build'])
+

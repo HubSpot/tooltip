@@ -1,98 +1,91 @@
-(function() {
-  var Tooltip, addClass, defaults, extend, initialized, removeClass, _Drop, _ref,
-    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+let { extend } = Tether.Utils;
 
-  _ref = Tether.Utils, addClass = _ref.addClass, removeClass = _ref.removeClass, extend = _ref.extend;
+const _Drop = Drop.createContext({
+  classPrefix: 'tooltip'
+});
 
-  _Drop = Drop.createContext({
-    classPrefix: 'tooltip'
-  });
+const defaults = {
+  position: 'top center',
+  openOn: 'hover',
+  classes: 'tooltip-theme-arrows',
+  constrainToWindow: true,
+  constrainToScrollParent: false
+};
 
-  defaults = {
-    position: 'top center',
-    openOn: 'hover',
-    classes: 'tooltip-theme-arrows',
-    constrainToWindow: true,
-    constrainToScrollParent: false
-  };
+class Tooltip {
+  constructor(options) {
+    this.options = options;
 
-  Tooltip = (function() {
-    function Tooltip(options) {
-      var content, position, _base, _base1;
-      this.options = options;
-      if (!this.options.target) {
-        throw new Error("Tooltip Error: You must provide a target for Tooltip to attach to");
-      }
-      if (position = this.options.target.getAttribute('data-tooltip-position')) {
-        if ((_base = this.options).position == null) {
-          _base.position = position;
-        }
-      }
-      if (content = this.options.target.getAttribute('data-tooltip')) {
-        if ((_base1 = this.options).content == null) {
-          _base1.content = content;
-        }
-      }
-      if (!this.options.content) {
-        throw new Error("Tooltip Error: You must provide content for Tooltip to display");
-      }
-      this.options = extend({}, defaults, this.options);
-      this.drop = new _Drop(this.options);
+    if (!this.options.target) {
+      throw new Error('Tooltip Error: You must provide a target for Tooltip to attach to');
     }
 
-    Tooltip.prototype.close = function() {
-      return this.drop.close();
-    };
-
-    Tooltip.prototype.open = function() {
-      return this.drop.open();
-    };
-
-    Tooltip.prototype.toggle = function() {
-      return this.drop.toggle();
-    };
-
-    Tooltip.prototype.remove = function() {
-      return this.drop.remove();
-    };
-
-    Tooltip.prototype.destroy = function() {
-      return this.drop.destroy();
-    };
-
-    Tooltip.prototype.position = function() {
-      return this.drop.position();
-    };
-
-    return Tooltip;
-
-  })();
-
-  initialized = [];
-
-  Tooltip.init = function() {
-    var el, _i, _len, _ref1, _results;
-    _ref1 = document.querySelectorAll('[data-tooltip]');
-    _results = [];
-    for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-      el = _ref1[_i];
-      if (!(__indexOf.call(initialized, el) < 0)) {
-        continue;
+    let position = this.options.target.getAttribute('data-tooltip-position');
+    if (position) {
+      if (typeof this.options.position === 'undefined') {
+        this.options.position = position;
       }
+    }
+
+    let content = this.options.target.getAttribute('data-tooltip');
+    if (content) {
+      if (typeof this.options.content === 'undefined') {
+        this.options.content = content;
+      }
+    }
+
+    if (!this.options.content) {
+      throw new Error('Tooltip Error: You must provide content for Tooltip to display');
+    }
+
+    this.options = extend({}, defaults, this.options);
+
+    this.drop = new _Drop(this.options);
+  }
+
+  close() {
+    this.drop.close();
+  }
+
+  open() {
+    this.drop.open();
+  }
+
+  toggle() {
+    this.drop.toggle();
+  }
+
+  remove() {
+    this.drop.remove();
+  }
+
+  destroy() {
+    this.drop.destroy();
+  }
+
+  position() {
+    this.drop.position();
+  }
+}
+
+let initialized = [];
+
+Tooltip.init = () => {
+  let tooltipElements = document.querySelectorAll('[data-tooltip]');
+  let len = tooltipElements.length;
+  for (let i = 0; i < len; ++i) {
+    let el = tooltipElements[i];
+    if (initialized.indexOf(el) === -1) {
       new Tooltip({
         target: el
       });
-      _results.push(initialized.push(el));
+      initialized.push(el);
     }
-    return _results;
-  };
+  }
+};
 
-  document.addEventListener('DOMContentLoaded', function() {
-    if (Tooltip.autoinit !== false) {
-      return Tooltip.init();
-    }
-  });
-
-  window.Tooltip = Tooltip;
-
-}).call(this);
+document.addEventListener('DOMContentLoaded', () => {
+  if (Tooltip.autoinit !== false) {
+    Tooltip.init();
+  }
+});
