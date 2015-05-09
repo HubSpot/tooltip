@@ -1,4 +1,6 @@
-let { extend } = Tether.Utils;
+/* global Tether Drop */
+
+const { extend } = Tether.Utils;
 
 const _Drop = Drop.createContext({
   classPrefix: 'tooltip'
@@ -20,14 +22,14 @@ class Tooltip {
       throw new Error('Tooltip Error: You must provide a target for Tooltip to attach to');
     }
 
-    let position = this.options.target.getAttribute('data-tooltip-position');
+    const position = this.options.target.getAttribute('data-tooltip-position');
     if (position) {
       if (typeof this.options.position === 'undefined') {
         this.options.position = position;
       }
     }
 
-    let content = this.options.target.getAttribute('data-tooltip');
+    const content = this.options.target.getAttribute('data-tooltip');
     if (content) {
       if (typeof this.options.content === 'undefined') {
         this.options.content = content;
@@ -71,10 +73,10 @@ class Tooltip {
 let initialized = [];
 
 Tooltip.init = () => {
-  let tooltipElements = document.querySelectorAll('[data-tooltip]');
-  let len = tooltipElements.length;
+  const tooltipElements = document.querySelectorAll('[data-tooltip]');
+  const len = tooltipElements.length;
   for (let i = 0; i < len; ++i) {
-    let el = tooltipElements[i];
+    const el = tooltipElements[i];
     if (initialized.indexOf(el) === -1) {
       new Tooltip({
         target: el

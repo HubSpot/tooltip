@@ -16,6 +16,8 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
+/* global Tether Drop */
+
 var extend = Tether.Utils.extend;
 
 var _Drop = Drop.createContext({
