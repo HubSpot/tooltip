@@ -1,10 +1,13 @@
 {
-  "name": "drop",
-  "version": "0.5.4",
+  "name": "tether-drop",
+  "version": "1.0.2",
   "homepage": "https://github.com/HubSpot/drop",
   "authors": [
     "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
     "Zack Bloom <zackbloom@gmail.com>"
+  ],
+  "maintainers": [
+    "Nicholas Hwang <nick.joosung.hwang@gmail.com>"
   ],
   "description": "Client-side library for creating dropdowns",
   "keywords": [
@@ -13,7 +16,7 @@
     "tether"
   ],
   "license": "MIT",
-  "main": "drop.js",
+  "main": "dist/js/drop.js",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -22,15 +25,15 @@
     "tests"
   ],
   "dependencies": {
-    "tether": "~0.6.5"
+    "tether": "~0.7.1"
   },
-  "_release": "0.5.4",
+  "_release": "1.0.2",
   "_resolution": {
     "type": "version",
-    "tag": "v0.5.4",
-    "commit": "d4cbbdb38ee968e2c6fc88880f11479a264df5fb"
+    "tag": "v1.0.2",
+    "commit": "9ac2bade43a0b4ff8963f7ac1d93531607f94a0d"
   },
   "_source": "git://github.com/HubSpot/drop.git",
-  "_target": "0.5.4",
+  "_target": "~1.0.0",
   "_originalSource": "drop"
 }

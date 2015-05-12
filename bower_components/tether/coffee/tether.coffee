@@ -173,7 +173,8 @@ class _Tether
         @[key] = document.querySelector @[key]
 
     addClass @element, @getClass 'element'
-    addClass @target, @getClass 'target'
+    unless @options.addTargetClasses is false
+      addClass @target, @getClass 'target'
 
     if not @options.attachment
       throw new Error "Tether Error: You must provide an attachment"
@@ -285,7 +286,8 @@ class _Tether
     @_cache[k]
 
   enable: (position=true) ->
-    addClass @target, @getClass 'enabled'
+    unless @options.addTargetClasses is false
+      addClass @target, @getClass 'enabled'
     addClass @element, @getClass 'enabled'
     @enabled = true
 
@@ -334,7 +336,8 @@ class _Tether
       return unless @_addAttachClasses?
 
       updateClasses @element, @_addAttachClasses, all
-      updateClasses @target, @_addAttachClasses, all
+      unless @options.addTargetClasses is false
+        updateClasses @target, @_addAttachClasses, all
 
       @_addAttachClasses = undefined
 
@@ -381,10 +384,10 @@ class _Tether
     for module in Tether.modules
       ret = module.position.call(@, {left, top, targetAttachment, targetPos, @attachment, elementPos, offset, targetOffset, manualOffset, manualTargetOffset, scrollbarSize})
 
-      if not ret? or typeof ret isnt 'object'
-        continue
-      else if ret is false
+      if ret is false
         return false
+      else if not ret? or typeof ret isnt 'object'
+        continue
       else
         {top, left} = ret
 

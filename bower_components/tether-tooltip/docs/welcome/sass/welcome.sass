@@ -1,0 +1,115 @@
+@import compass/css3
+
+html, body
+    height: 100%
+
+body
+    margin: 0
+    font-family: "proxima-nova", "Helvetica Neue", sans-serif
+
+.button
+    display: inline-block
+    border: 2px solid #333
+    color: #333
+    padding: 1em 1.25em
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 3px
+    text-decoration: none
+    cursor: pointer
+    width: 140px
+    font-size: .8em
+    line-height: 1.3em
+
+.button.dark
+    background: #333
+    color: #fff
+
+.hero-wrap
+    height: 100%
+    overflow: hidden
+
+table.showcase
+    height: 100%
+    width: 100%
+    position: relative
+
+    &:after
+        content: ""
+        display: block
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 20px
+        margin: auto
+        height: 0
+        width: 0
+        border-width: 18px
+        border-style: solid
+        border-color: transparent
+        border-top-color: rgba(0, 0, 0, 0.2)
+
+    &.no-next-arrow:after
+        display: none
+
+    .showcase-inner
+        margin: 40px auto 60px
+        padding: 10px
+
+        h1
+            font-size: 50px
+            text-align: center
+            font-weight: 300
+
+            @media (max-width: 567px)
+                font-size: 40px
+
+        h2
+            font-size: 24px
+            text-align: center
+            font-weight: 300
+            margin: 1em 0 1em
+
+            @media (max-width: 567px)
+                font-size: 14px
+
+        p
+            text-align: center
+
+    &.about
+        text-align: left
+        background: #fff1dd
+
+        a
+            color: #c96c24
+
+        p
+            +box-sizing(border-box)
+            text-align: left
+            width: 500px
+            max-width: 100%
+            margin-left: auto
+            margin-right: auto
+
+            > code
+                background: rgba(0, 0, 0, 0.05)
+
+        pre
+            +box-sizing(border-box)
+            text-align: left
+            width: 500px
+            max-width: 100%
+            margin-left: auto
+            margin-right: auto
+
+    &.hero
+        text-align: center
+
+        .tooltip-target-demo
+            +inline-block
+            border: 2px dotted #000
+            margin: 5rem auto
+            padding: 3rem
+
+            @media (max-width: 567px)
+                padding: 1rem

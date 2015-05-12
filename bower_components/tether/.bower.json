@@ -1,6 +1,6 @@
 {
   "name": "tether",
-  "version": "0.6.5",
+  "version": "0.7.1",
   "main": "tether.js",
   "homepage": "https://github.hubspot.com/tether",
   "authors": [
@@ -19,13 +19,13 @@
     "test",
     "tests"
   ],
-  "_release": "0.6.5",
+  "_release": "0.7.1",
   "_resolution": {
     "type": "version",
-    "tag": "v0.6.5",
-    "commit": "783528dac760cb0023e5bd02d63c79ec54b9fc25"
+    "tag": "v0.7.1",
+    "commit": "27e0ed27c01b950d6129cb0ed8616b843fed2b99"
   },
   "_source": "git://github.com/HubSpot/tether.git",
-  "_target": "~0.6.5",
+  "_target": "~0.7.1",
   "_originalSource": "tether"
 }

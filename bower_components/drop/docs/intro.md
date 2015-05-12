@@ -13,9 +13,9 @@
         constrainToScrollParent: true,
         openOn: 'click'
       }, $(this).data('options'));
-      
+
       new Drop(options);
-    }) 
+    })
   });
 </script>
 
@@ -27,7 +27,7 @@ Thank you for considering Drop, we believe it's the best way of creating dropdow
 
 ### Features
 
-Because Drop is built on [Tether](http://github.hubspot.com/tether), you get all of the benefits of its effecient and powerful positioning.
+Because Drop is built on [Tether](http://github.hubspot.com/tether), you get all of the benefits of its efficient and powerful positioning.
 
 - Drops automatically reposition on page resizes and scrolls, reorienting to stay in view.
 - Drop uses GPU accelerated positioning to maintain 60fps scrolling, even with dozens or hundreds of drops on screen and complex animation
@@ -66,7 +66,7 @@ Opens the drop. Specifically, this adds `drop-open` and other classes to the dro
 
 #### `close()`
 
-Opens the drop. Specifically, this removes `drop-open` and other classes from the drop. Closed drops will still remain in the DOM.
+Closes the drop. Specifically, this removes `drop-open` and other classes from the drop. Closed drops will still remain in the DOM.
 
 #### `remove()`
 
@@ -99,7 +99,11 @@ a click or hover can be set to open the drop.
 
 #### `content`
 
-The content which should be rendered into the Drop.  Can be a DOM element or an HTML string.
+The content which should be rendered into the Drop.  Can be:
+
+- A DOM element
+- An HTML string
+- A function that returns an HTML string or a DOM element.  `content()` is called on each open, with the drop instance passed as the first argument.
 
 #### `position`
 
@@ -152,7 +156,7 @@ Additional class names to be added to the drop. These can be set to apply a them
 
 #### `remove`
 
-Set to `false` if you'd like the drop element to be removed from the DOM when the drop is closed, and recreated when it's opened.
+Set to `true` if you'd like the drop element to be removed from the DOM when the drop is closed, and recreated when it's opened.
 
 ```coffeescript
 true
