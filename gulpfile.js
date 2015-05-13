@@ -3,9 +3,10 @@ var gulp        = require('gulp');
 var babel       = require('gulp-babel');
 var bump        = require('gulp-bump');
 var filter      = require('gulp-filter');
-var sass        = require('gulp-ruby-sass');
 var header      = require('gulp-header');
+var prefixer    = require('gulp-autoprefixer');
 var rename      = require('gulp-rename');
+var sass        = require('gulp-sass');
 var uglify      = require('gulp-uglify');
 var tagVersion  = require('gulp-tag-version');
 var umd         = require('gulp-wrap-umd');
@@ -60,11 +61,12 @@ gulp.task('js', ['clean'], function() {
 
 // CSS
 gulp.task('css', function() {
-  sass('./src/css', {
-    loadPath: './bower_components',
-    compass: true
-  })
-  .pipe(gulp.dest(distDir + '/css'));
+  gulp.src('./src/css/**/*.sass')
+    .pipe(sass({
+      includePaths: ['./bower_components']
+    }))
+    .pipe(prefixer())
+    .pipe(gulp.dest(distDir + '/css'));
 });
 
 

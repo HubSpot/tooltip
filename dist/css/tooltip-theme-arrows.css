@@ -1,6 +1,4 @@
 .tooltip-element, .tooltip-element:after, .tooltip-element:before, .tooltip-element *, .tooltip-element *:after, .tooltip-element *:before {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .tooltip-element {
@@ -13,8 +11,6 @@
   max-width: 100%;
   max-height: 100%; }
   .tooltip-element.tooltip-theme-arrows .tooltip-content {
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
     position: relative;
     font-family: inherit;
@@ -110,8 +106,6 @@
       border-right-color: #000; }
 
 .tooltip-element.tooltip-theme-arrows {
-  -webkit-pointer-events: none;
-  -moz-pointer-events: none;
   pointer-events: none; }
   .tooltip-element.tooltip-theme-arrows .tooltip-content {
     padding: 0.5em 1em; }
