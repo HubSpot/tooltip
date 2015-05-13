@@ -3,8 +3,6 @@
 @import ../bower_components/tether/sass/helpers/tether
 @import ../bower_components/tether/sass/helpers/tether-theme-arrows
 
-@import mixins/pointer-events-temporary
-
 $themePrefix: "tooltip"
 $arrowSize: 8px
 $backgroundColor: #000
@@ -17,7 +15,7 @@ $useDropShadow: false
 // Just a few additions
 
 .#{ $themePrefix }-element.#{ $themePrefix }-theme-arrows
-    +pointer-events(none)
+    pointer-events: none
 
     .#{ $themePrefix }-content
         padding: .5em 1em
