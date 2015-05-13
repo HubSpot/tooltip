@@ -1,6 +1,6 @@
 {
   "name": "tether-tooltip",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CSS tooltips built on Tether",
   "authors": [
     "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
@@ -16,6 +16,7 @@
   "license": "MIT",
   "main": "dist/js/tooltip.js",
   "devDependencies": {
+    "bower": "^1.4.1",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
@@ -31,6 +32,6 @@
   },
   "dependencies": {
     "tether": "^0.7.2",
-    "tether-drop": "^1.0.3"
+    "tether-drop": "^1.0.4"
   }
 }

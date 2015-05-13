@@ -1,4 +1,4 @@
-/*! tether-tooltip 1.0.2 */
+/*! tether-tooltip 1.0.3 */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {

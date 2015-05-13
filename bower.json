@@ -1,6 +1,6 @@
 {
   "name": "tether-tooltip",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.hubspot.com/tooltip",
   "authors": [
     "Zack Bloom <zackbloom@gmail.com>",
@@ -26,6 +26,6 @@
   ],
   "dependencies": {
     "tether": "~0.7.2",
-    "tether-drop": "~1.0.3"
+    "tether-drop": "~1.0.4"
   }
 }
