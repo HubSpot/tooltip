@@ -1,10 +1,10 @@
-/*! tether-tooltip 1.0.3 */
+/*! tether-tooltip 1.0.4 */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define(["drop","tether"], factory);
+    define(["tether-drop","tether"], factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory(require('drop'), require('tether'));
+    module.exports = factory(require('tether-drop'), require('tether'));
   } else {
     root.Tooltip = factory(root.Drop, root.Tether);
   }

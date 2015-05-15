@@ -23,8 +23,8 @@ var umdOptions = {
     name: 'Drop',
     globalName: 'Drop',
     paramName: 'Drop',
-    amdName: 'drop',
-    cjsName: 'drop'
+    amdName: 'tether-drop',
+    cjsName: 'tether-drop'
   },
   {
     name: 'Tether',

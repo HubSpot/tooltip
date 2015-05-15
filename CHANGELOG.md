@@ -1,3 +1,9 @@
+## v1.0.4
+- Use correct `require` name for `drop`
+
+## v1.0.3
+- Remove Compass and Ruby dependencies
+
 ## v1.0.0
 - Add proper UMD to `Tooltip`
 - Convert from `Coffeescript` to `ES6 (Babel)`
@@ -7,4 +13,3 @@
 - Update `gulp` builds
 - Update `drop` dependency to `v1.0.0`
 - Update `tether` dependency to `v0.7.1`
-
