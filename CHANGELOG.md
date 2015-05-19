@@ -1,3 +1,6 @@
+## v1.0.5
+- Remove `bower install` post-install script
+
 ## v1.0.4
 - Use correct `require` name for `drop`
 
