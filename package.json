@@ -1,6 +1,6 @@
 {
   "name": "tether-tooltip",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "CSS tooltips built on Tether",
   "authors": [
     "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "tether": "^0.7.2",
-    "tether-drop": "^1.0.5"
+    "tether-drop": "^1.0.7"
   }
 }
