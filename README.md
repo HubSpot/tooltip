@@ -1,5 +1,10 @@
 ## Tooltip
 
+[![npm
+version](https://badge.fury.io/js/tether-tooltip.svg)](http://badge.fury.io/js/tether-tooltip)
+[![Bower
+version](https://badge.fury.io/bo/tether-tooltip.svg)](http://badge.fury.io/bo/tether-tooltip)
+
 Tooltip.js is a Javascript and CSS library for creating styleable tooltips.
 
 

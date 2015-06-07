@@ -1,3 +1,8 @@
+## v1.1.0
+- Update to `Tether` version v1.0.0
+- Update to `Drop` version v1.1.0
+- Add badges to readme
+
 ## v1.0.5
 - Remove `bower install` post-install script
 
