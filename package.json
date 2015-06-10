@@ -30,7 +30,7 @@
     "gulp-wrap-umd": "^0.2.1"
   },
   "dependencies": {
-    "tether": "^1.0.0",
-    "tether-drop": "^1.1.0"
+    "tether": "^1.0.2",
+    "tether-drop": "^1.1.1"
   }
 }
