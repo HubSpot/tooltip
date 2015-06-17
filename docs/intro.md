@@ -1,15 +1,19 @@
-<link rel="stylesheet" href="/tooltip/css/tooltip-theme-arrows.css" />
-<script src="/tooltip/tooltip.min.js"></script>
+<link rel="stylesheet" href="/tooltip/dist/css/tooltip-theme-arrows.css" />
+<script src="/tooltip/bower_components/tether/dist/js/tether.js"></script>
+<script src="/tooltip/bower_components/tether-drop/dist/js/drop.js"></script>
+<script src="/tooltip/dist/js/tooltip.min.js"></script>
 
 ## Tooltip
 
 Tooltip is a javascript and CSS library for creating styleable tooltip elements.
 
-Tooltip uses [Tether](http://github.hubspot.com/tether) for reliable and efficient positioning.
+Tooltip uses [Tether](http://github.hubspot.com/tether) and [Drop](http://github.hubspot.com/drop) for reliable and efficient positioning.
 
 ### Dependencies
 
-None!
+Tether
+
+Drop
 
 ### Browser Support
 
@@ -21,6 +25,8 @@ IE9+ and everything modern
 
 ```html
 <link rel="stylesheet" href="css/tooltip-theme-arrows.css" />
+<script src="tether.min.js"></script>
+<script src="drop.min.js"></script>
 <script src="tooltip.min.js"></script>
 ```
 

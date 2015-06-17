@@ -1,5 +1,4 @@
 title: "tooltip"
 description: "Styleable tooltips built on Tether"
-source: "tooltip.coffee"
-examples: "**/*.md"
-assets: "{bower_components/*,*.js,*.coffee,css/*.css,docs/css/*.css,docs/js/*,js,docs/welcome/*}"
+examples: "docs/**/*.md"
+assets: "{bower_components/*,dist/js/*.js,dist/css/*.css,docs/css/*.css,docs/js/*,js,docs/welcome/*}"
