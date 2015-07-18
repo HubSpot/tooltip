@@ -52,7 +52,7 @@ You can also pass a DOM node as `content`.
 
 #### Changing the positioning
 
-Tooltips can be attached to 12 locations around the target. When initializing, you may set the `attach` property to any of the following:
+Tooltips can be attached to 12 locations around the target. When initializing, you may set the `position` property to any of the following:
 
 ```coffeescript
 'top left'
