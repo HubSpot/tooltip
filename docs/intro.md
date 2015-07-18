@@ -71,4 +71,4 @@ Tooltips can be attached to 12 locations around the target. When initializing, y
 
 ### Themes
 
-Currently there is only one default theme. We will be adding more soon!
+Currently there are two themes. If you would like to contribute your own themes, feel free to open pull requests and we'll be happy to include them in our library.
