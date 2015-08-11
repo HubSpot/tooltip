@@ -22,21 +22,8 @@ class Tooltip {
       throw new Error('Tooltip Error: You must provide a target for Tooltip to attach to');
     }
 
-    const position = this.options.target.getAttribute('data-tooltip-position');
-    if (position) {
-      if (typeof this.options.position === 'undefined') {
-        this.options.position = position;
-      }
-    }
-
     const content = this.options.target.getAttribute('data-tooltip');
-    if (content) {
-      if (typeof this.options.content === 'undefined') {
-        this.options.content = content;
-      }
-    }
-
-    if (!this.options.content) {
+    if (!content) {
       throw new Error('Tooltip Error: You must provide content for Tooltip to display');
     }
 
