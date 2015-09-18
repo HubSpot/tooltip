@@ -33,7 +33,7 @@ IE9+ and everything modern
 - Add `data-tooltip`, and optionally `data-tooltip-position` to any element.
 
 ```html
-<a href=# data-tooltip="Weeeeee" data-tooltip-position="top middle">I'm a link!</a>
+<a href=# data-tooltip="Weeeeee" data-tooltip-position="top center">I'm a link!</a>
 ```
 
 #### Manual Initialization
