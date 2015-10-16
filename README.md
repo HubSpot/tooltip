@@ -32,7 +32,7 @@ $ bower install tether-tooltip
 let tooltipInstance = new Tooltip({
   target: document.querySelector('.tooltip-target'),
   content: "My awesome <b>content</b>.",
-  classes: 'tooltip-tether-arrows',
+  classes: 'tooltip-theme-arrows',
   position: 'top left'
 })
 ```
