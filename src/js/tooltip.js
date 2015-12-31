@@ -14,6 +14,8 @@ const defaults = {
   constrainToScrollParent: false
 };
 
+let tooltipCount = 0;
+
 class Tooltip {
   constructor(options) {
     this.options = options;
@@ -30,9 +32,19 @@ class Tooltip {
     }
 
     const content = this.options.target.getAttribute('data-tooltip');
+
     if (content) {
       if (typeof this.options.content === 'undefined') {
-        this.options.content = content;
+        const contentEl = document.createElement('div');
+        contentEl.innerHTML = content;
+
+        // Add ARIA attributes (see #50)
+        contentEl.setAttribute('role', 'tooltip');
+        contentEl.id = `drop-tooltip-${ tooltipCount }`;
+        this.options.target.setAttribute('aria-describedby', contentEl.id);
+        tooltipCount += 1;
+
+        this.options.content = contentEl;
       }
     }
 
@@ -43,6 +55,8 @@ class Tooltip {
     this.options = extend({}, defaults, this.options);
 
     this.drop = new _Drop(this.options);
+
+
   }
 
   close() {
