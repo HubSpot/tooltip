@@ -1,3 +1,7 @@
+## v1.2.0
+- Update to `Drop` version v1.4.0
+- Add role=tooltip, aria-describedby attributes ([#51](https://github.com/HubSpot/tooltip/pull/51))
+
 ## v1.1.0
 - Update to `Tether` version v1.0.0
 - Update to `Drop` version v1.1.0
