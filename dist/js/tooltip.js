@@ -32,6 +32,8 @@ var defaults = {
   constrainToScrollParent: false
 };
 
+var tooltipCount = 0;
+
 var Tooltip = (function () {
   function Tooltip(options) {
     _classCallCheck(this, Tooltip);
@@ -50,9 +52,19 @@ var Tooltip = (function () {
     }
 
     var content = this.options.target.getAttribute('data-tooltip');
+
     if (content) {
       if (typeof this.options.content === 'undefined') {
-        this.options.content = content;
+        var contentEl = document.createElement('div');
+        contentEl.innerHTML = content;
+
+        // Add ARIA attributes (see #50)
+        contentEl.setAttribute('role', 'tooltip');
+        contentEl.id = 'drop-tooltip-' + tooltipCount;
+        this.options.target.setAttribute('aria-describedby', contentEl.id);
+        tooltipCount += 1;
+
+        this.options.content = contentEl;
       }
     }
 

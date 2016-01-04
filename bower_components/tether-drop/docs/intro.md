@@ -34,7 +34,7 @@ Because Drop is built on [Tether](http://github.hubspot.com/tether), you get all
 - Drop uses GPU accelerated positioning to maintain 60fps scrolling, even with dozens or hundreds of drops on screen and complex animation
 - Drops can be nested within other drops
 - Drops can be attached to any of 12 attachment points on the target, or you can leverage the full power of Tether to position your drop anywhere.
-- Drops can be configured to open when the user clicks or hovers.
+- Drops can be configured to open when the user clicks, hovers, or focuses an element.
 - Drop is maintained by developers at [HubSpot](http://github.hubspot.com) who care about making it do everything you need.
 
 ### Dependencies
@@ -56,6 +56,22 @@ drop = new Drop
   position: 'bottom left'
   openOn: 'click'
 ```
+
+You can also create Drops from a custom "context," allowing you to style Drops within that context with CSS
+classes prefixed with an arbitrary string. By default, that `classPrefix` is `drop`. To define a new context:
+
+```coffeescript
+MyDropContext = Drop.createContext
+  classPrefix: 'my-drop'
+
+drop = new MyDropContext
+  target: document.querySelector('.my-drop-target')
+  content: 'Welcome to my new Drop context!'
+```
+
+Any Drops created within this context would be styled with classes like `my-drop-open` and `my-drop-content`
+instead of `drop-open` and `drop-content`. Additionally, any options that would be set via `data-drop`
+attributes in the default context would be set via `data-my-drop` instead.
 
 ### Methods
 
@@ -106,6 +122,9 @@ The content that should be rendered into the Drop.  Can be:
 - An HTML string
 - A function that returns an HTML string or a DOM element.  `content()` is called on each open, with the drop instance passed as the first argument.
 
+If this option is not set, it defaults to the value of the `data-${classPrefix}` (normally `data-drop`)
+attribute on the target element.
+
 #### `position`
 
 Position specifies the attachment point (on the target) to attach the drop to. Options include:
@@ -125,6 +144,9 @@ Position specifies the attachment point (on the target) to attach the drop to. O
 'top center'
 ```
 
+If this option is not set, it defaults to the value of the `data-${classPrefix}-position` (normally
+`data-drop-position`) attribute on the target element.
+
 More information about attachment can be found in the [Tether documentation](http://tether.io).
 
 #### `openOn`
@@ -135,8 +157,12 @@ Specifies what event on the target opens the drop. If you set this to `undefined
 ```coffeescript
 'click'
 'hover'
+'focus'
 'always'
 ```
+
+If this option is not set, it defaults to the value of the `data-${classPrefix}-openOn` (normally
+`data-drop-openOn`) attribute on the target element.
 
 #### `constrainToWindow`
 
@@ -168,6 +194,29 @@ false
 
 Function that is run before closing the drop. If the function returns `false`, the closing of the drop will be prevented. Useful if you only want to programatically close the drop.
 
+#### `hoverOpenDelay`
+
+Amount of time (in milliseconds) to delay opening the drop after `mouseover`
+
+#### `hoverCloseDelay`
+
+Amount of time (in milliseconds) to delay closing the drop after `mouseout`
+
+#### `focusDelay`
+
+Amount of time (in milliseconds) to delay opening the drop after `focus`
+
+#### `blurDelay`
+
+Amount of time (in milliseconds) to delay closing the drop after `blur`
+
+#### `openDelay`
+
+Sets both the `hoverOpenDelay` and `focusDelay`
+
+#### `closeDelay`
+
+Sets both the `hoverCloseDelay` and `blurDelay`
 
 #### `tetherOptions`
 
@@ -184,6 +233,10 @@ defaultOptions =
     constrainToWindow: true
     constrainToScrollParent: true
     classes: ''
+    hoverOpenDelay: 0
+    hoverCloseDelay: 50
+    focusDelay: 0
+    blurDelay: 50
     tetherOptions: {}
 ```
 
