@@ -31,10 +31,10 @@ class Tooltip {
       }
     }
 
-    const content = this.options.target.getAttribute('data-tooltip');
+    const content = this.options.content || this.options.target.getAttribute('data-tooltip');
 
     if (content) {
-      if (typeof this.options.content === 'undefined') {
+      if (typeof this.options.content === 'string') {
         const contentEl = document.createElement('div');
         contentEl.innerHTML = content;
 

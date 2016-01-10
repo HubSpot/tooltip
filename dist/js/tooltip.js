@@ -1,4 +1,4 @@
-/*! tether-tooltip 1.1.0 */
+/*! tether-tooltip 1.2.0 */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -51,10 +51,10 @@ var Tooltip = (function () {
       }
     }
 
-    var content = this.options.target.getAttribute('data-tooltip');
+    var content = this.options.content || this.options.target.getAttribute('data-tooltip');
 
     if (content) {
-      if (typeof this.options.content === 'undefined') {
+      if (typeof this.options.content === 'string') {
         var contentEl = document.createElement('div');
         contentEl.innerHTML = content;
 
