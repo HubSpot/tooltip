@@ -54,7 +54,7 @@ var Tooltip = (function () {
     var content = this.options.content || this.options.target.getAttribute('data-tooltip');
 
     if (content) {
-      if (typeof this.options.content === 'string') {
+      if (typeof this.options.content === 'string' || typeof this.options.content === 'undefined') {
         var contentEl = document.createElement('div');
         contentEl.innerHTML = content;
 
