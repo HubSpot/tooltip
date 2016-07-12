@@ -1,4 +1,4 @@
-/*! tether-tooltip 1.1.0 */
+/*! tether-tooltip 1.2.0 */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -20,10 +20,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var extend = Tether.Utils.extend;
 
-var _Drop = Drop.createContext({
-  classPrefix: 'tooltip'
-});
-
 var defaults = {
   position: 'top center',
   openOn: 'hover',
@@ -39,6 +35,10 @@ var Tooltip = (function () {
     _classCallCheck(this, Tooltip);
 
     this.options = options;
+
+    var _Drop = Drop.createContext({
+      classPrefix: this.options.classPrefix || 'tooltip'
+    });
 
     if (!this.options.target) {
       throw new Error('Tooltip Error: You must provide a target for Tooltip to attach to');

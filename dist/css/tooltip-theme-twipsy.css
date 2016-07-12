@@ -56,6 +56,34 @@
       top: 50%;
       margin-top: -10px;
       border-right-color: #414141; }
+  .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-left.tooltip-target-attached-center .tooltip-content {
+    left: -20px; }
+  .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-right.tooltip-target-attached-center .tooltip-content {
+    left: 20px; }
+  .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content {
+    margin-top: 10px; }
+    .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content:before {
+      bottom: 100%;
+      left: 10px;
+      border-bottom-color: #414141; }
+  .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-top.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content {
+    margin-top: 10px; }
+    .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-top.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content:before {
+      bottom: 100%;
+      right: 10px;
+      border-bottom-color: #414141; }
+  .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-bottom.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content {
+    margin-bottom: 10px; }
+    .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-bottom.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content:before {
+      top: 100%;
+      left: 10px;
+      border-top-color: #414141; }
+  .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-bottom.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content {
+    margin-bottom: 10px; }
+    .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-bottom.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content:before {
+      top: 100%;
+      right: 10px;
+      border-top-color: #414141; }
   .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-bottom .tooltip-content {
     margin-top: 10px; }
     .tooltip-element.tooltip-theme-twipsy.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-bottom .tooltip-content:before {
@@ -111,7 +139,7 @@
           transition: opacity 150ms;
   pointer-events: none; }
   .tooltip-element.tooltip-theme-twipsy .tooltip-content {
-    padding: 0.5em 1em; }
+    padding: .5em 1em; }
   .tooltip-element.tooltip-theme-twipsy .tooltip-content {
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
     border-radius: 2px;
