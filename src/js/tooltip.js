@@ -2,10 +2,6 @@
 
 const { extend } = Tether.Utils;
 
-const _Drop = Drop.createContext({
-  classPrefix: 'tooltip'
-});
-
 const defaults = {
   position: 'top center',
   openOn: 'hover',
@@ -19,6 +15,10 @@ let tooltipCount = 0;
 class Tooltip {
   constructor(options) {
     this.options = options;
+
+    const _Drop = Drop.createContext({
+      classPrefix: this.options.classPrefix || 'tooltip'
+    });
 
     if (!this.options.target) {
       throw new Error('Tooltip Error: You must provide a target for Tooltip to attach to');

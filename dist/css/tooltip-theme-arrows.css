@@ -56,6 +56,34 @@
       top: 50%;
       margin-top: -8px;
       border-right-color: #000; }
+  .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-left.tooltip-target-attached-center .tooltip-content {
+    left: -16px; }
+  .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-right.tooltip-target-attached-center .tooltip-content {
+    left: 16px; }
+  .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content {
+    margin-top: 8px; }
+    .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content:before {
+      bottom: 100%;
+      left: 8px;
+      border-bottom-color: #000; }
+  .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-top.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content {
+    margin-top: 8px; }
+    .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-top.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content:before {
+      bottom: 100%;
+      right: 8px;
+      border-bottom-color: #000; }
+  .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-bottom.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content {
+    margin-bottom: 8px; }
+    .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-bottom.tooltip-element-attached-left.tooltip-target-attached-middle .tooltip-content:before {
+      top: 100%;
+      left: 8px;
+      border-top-color: #000; }
+  .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-bottom.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content {
+    margin-bottom: 8px; }
+    .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-bottom.tooltip-element-attached-right.tooltip-target-attached-middle .tooltip-content:before {
+      top: 100%;
+      right: 8px;
+      border-top-color: #000; }
   .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-bottom .tooltip-content {
     margin-top: 8px; }
     .tooltip-element.tooltip-theme-arrows.tooltip-element-attached-top.tooltip-element-attached-left.tooltip-target-attached-bottom .tooltip-content:before {
@@ -108,4 +136,4 @@
 .tooltip-element.tooltip-theme-arrows {
   pointer-events: none; }
   .tooltip-element.tooltip-theme-arrows .tooltip-content {
-    padding: 0.5em 1em; }
+    padding: .5em 1em; }
