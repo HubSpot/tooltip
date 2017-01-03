@@ -10,6 +10,7 @@
     "Nicholas Hwang <nick.joosung.hwang@gmail.com>"
   ],
   "description": "Tooltips built on Tether",
+  "main": "tooltip.js",
   "keywords": [
     "tooltip",
     "overlay",
